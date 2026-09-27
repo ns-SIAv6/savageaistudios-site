@@ -1,0 +1,294 @@
+/* Savage AI Studios — gunmetal dark, sharp, real. */
+
+:root {
+  --bg: #141619;
+  --bg-alt: #1a1d21;
+  --panel: #1e2126;
+  --line: #2b2f36;
+  --text: #e8e9eb;
+  --muted: #a7adb6;
+  --accent: #c98f3d;      /* copper */
+  --accent-dim: rgba(201, 143, 61, 0.14);
+  --max: 1080px;
+  --narrow: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+#field {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.site-header, main, footer { position: relative; z-index: 1; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.wrap.narrow { max-width: var(--narrow); }
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(20, 22, 25, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1.25rem;
+  font-size: 0.9rem;
+}
+nav a:hover { color: var(--accent); }
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding: 6rem 0 4.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  color: var(--text);
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 42rem;
+  margin: 0 0 2.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.stat { display: flex; flex-direction: column; }
+
+.stat .num {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat .lbl {
+  color: var(--muted);
+  font-size: 0.88rem;
+  max-width: 11rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #141619;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.8rem 1.9rem;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+.btn:hover { background: #dba452; }
+
+/* ---------- sections ---------- */
+
+.section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); }
+.section.alt { background: var(--bg-alt); }
+
+.section h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 46rem;
+  margin: 0 0 2.5rem;
+}
+
+/* ---------- product grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1.25rem 1.25rem 1.1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.02rem;
+  color: var(--accent);
+}
+
+.card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+.note {
+  color: var(--muted);
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  max-width: 46rem;
+}
+.note strong { color: var(--text); }
+
+/* ---------- about / contact ---------- */
+
+#about p, #contact .section-lede { max-width: 44rem; }
+
+.entities {
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+.entities strong { color: var(--text); }
+
+.email { margin: 1.5rem 0 0; }
+.email a {
+  color: var(--accent);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-all;
+}
+.email a:hover { text-decoration: underline; }
+
+/* ---------- footer ---------- */
+
+footer {
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.foot-note { font-style: italic; }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 640px) {
+  nav a { margin-left: 0.9rem; }
+  .hero { padding: 4rem 0 3rem; }
+  .stats { gap: 1.5rem; }
+}
+
+/* ---------- catalog / buy buttons ---------- */
+
+.cta-row { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn.ghost:hover { background: rgba(201,143,61,0.12); }
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.55rem 0 0;
+}
+.price {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  min-width: 4.2rem;
+}
+.buy-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #141619;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+.buy-btn:hover { background: #dba452; }
+
+.store-link { margin: 0.7rem 0 0; font-size: 0.9rem; }
+.store-link a, .note a { color: var(--accent); }
+
+.socials { margin-top: 1.2rem; font-size: 1.05rem; }
+.socials a { color: var(--accent); text-decoration: none; margin: 0 0.15rem; }
+.socials a:hover { text-decoration: underline; }
+.socials .sep { color: var(--muted); margin: 0 0.4rem; }
